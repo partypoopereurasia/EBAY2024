@@ -1,0 +1,110 @@
+.slider {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    padding-top: 450px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+
+.slider div {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%) !important;
+    transition: all 0.5s;
+    max-width: 100%;
+    height: 450px !important;
+    width: auto;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider div img {
+    width: auto;
+    z-index: 999999999999999;
+    height: 100%;
+    transition: .3s;
+}
+
+
+/* .slider div img:hover {
+    transform: scale(2) !important;
+} */
+
+.slider input[name='slide_switch'] {
+    display: none;
+}
+
+.slider label {
+    margin: 5px;
+    padding: 5px 8px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    float: left;
+    cursor: pointer;
+    transition: all 0.5s;
+    height: 60px !important;
+    opacity: 0.6;
+    display: flex;
+    justify-content: center;
+}
+
+.slider label img {
+    height: 100%;
+    width: auto
+}
+
+
+.slider input[name='slide_switch']:checked+label {
+
+    opacity: 1;
+    display: inline;
+}
+
+.slider input[name='slide_switch']~div {
+    opacity: 0;
+    max-height: 450px;
+    z-index: -99999999999;
+    width: 100%;
+}
+
+.slider input[name='slide_switch']:checked+label+div {
+    opacity: 1;
+    z-index: 99999999999 !important;
+    transition: .5s linear;
+}
+
+/* .slider input[name='slide_switch']:checked+label+div:hover {
+    overflow: scroll;
+}
+
+.slider input[name='slide_switch']:checked+label+div:hover img {
+    transform: scale(5) !important;
+} */
+
+
+
+@media(max-width: 776px){
+    .slider {
+        padding-top: 70%;
+    }
+    .slider div {
+        height: auto !important;
+    }
+    .slider div img {
+        height: auto;
+    }
+}
+
+@media (max-width: 500px){
+                .slider {
+                    padding-top: 130%;
+                }
+}
